@@ -1,7 +1,7 @@
 <!-- 
 <?php
 # cara 1
-    $db = mysqli_connect('localhost','root','','db_bukutamu');
+    $db = mysqli_connect('localhost','root','','db_akademik');
 ?> -->
 
 <?php
@@ -9,7 +9,7 @@
     $host = 'localhost';
     $user = 'root';
     $password = '';
-    $db_name = 'db_bukutamu';
+    $db_name = 'db_akademik';
    
     // open connection
     $koneksi = new mysqli($host, $user, $password, $db_name);

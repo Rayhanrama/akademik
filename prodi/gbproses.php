@@ -1,15 +1,15 @@
 <?php
-    include ("koneksi.php");
+    include ("../koneksi.php");
 ?>
 
 
 <?php
 // create 
 if (isset($_POST['submit'])){
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $komentar = $_POST['komentar'];
-    $sql = "INSERT INTO tamu(nama,email,komentar) VALUES ('$nama','$email','$komentar')";
+    $nama_prodi = $_POST['nama_prodi'];
+    $jenjang = $_POST['jenjang'];
+    $keterangan = $_POST['keterangan'];
+    $sql = "INSERT INTO prodi(nama_prodi,jenjang,keterangan) VALUES ('$nama_prodi','$jenjang','$keterangan')";
 
     $query = $koneksi->query($sql);
     header("Location: index.php");
@@ -23,14 +23,14 @@ if (isset($_POST['submit'])){
 if (isset($_POST['update'])) {
     // Ambil data dari POST, bukan GET
     $id = intval($_POST['id']);
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $komentar = $_POST['komentar'];
+    $nama_prodi = $_POST['nama_prodi'];
+    $jenjang = $_POST['jenjang'];
+    $keterangan = $_POST['keterangan'];
 
-    $sql = "UPDATE tamu 
-            SET nama='$nama', 
-                email='$email', 
-                komentar='$komentar' 
+    $sql = "UPDATE prodi 
+            SET nama_prodi='$nama_prodi', 
+                jenjang='$jenjang', 
+                keterangan='$keterangan' 
             WHERE id=$id";
 
     $query = $koneksi->query($sql);
@@ -45,7 +45,7 @@ if (isset($_POST['update'])) {
 ?>
 
 <?php 
-    $sql = "DELETE FROM tamu where id=$_GET[id]";
+    $sql = "DELETE FROM prodi where id=$_GET[id]";
     $hapus = $koneksi->query($sql);
     if($hapus){
         header("Location: index.php");
