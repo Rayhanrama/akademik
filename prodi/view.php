@@ -14,6 +14,7 @@ $edit = $result->fetch_assoc();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/navbar.php'; ?>
     <div class="container mt-3">
       <h1>View Prodi</h1>
  <form method="post" action="gbproses.php">
