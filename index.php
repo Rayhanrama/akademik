@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Jika belum login, arahkan ke halaman login
+if (!isset($_SESSION['login'])) {
+    header("Location: auth/login.php");
+    exit;
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,43 +18,77 @@
 
   <title>Home</title>
 </head>
-<body>
+<body class="bg-light">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Akademik</a>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/navbar.php'; ?>
 
-    <button class="navbar-toggler" type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarTogglerDemo01"
-      aria-controls="navbarTogglerDemo01"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!-- HERO SECTION -->
+<div class="container py-5 text-center">
+  <h1 class="fw-bold mb-3">Welcome to Akademik System</h1>
+  <p class="text-muted mb-4">
+    Sistem manajemen data akademik untuk mengelola mahasiswa, program studi, dan profil pengguna.
+  </p>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/mahasiswa/index.php">Mahasiswa</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/prodi/index.php">Prodi</a>
-        </li>
-      </ul>
-    </div>
+  <div class="d-flex justify-content-center gap-3">
+    <a href="mahasiswa/index.php" class="btn btn-primary btn-lg">
+      Data Mahasiswa
+    </a>
+    <a href="prodi/index.php" class="btn btn-outline-secondary btn-lg">
+      Data Prodi
+    </a>
   </div>
-</nav>
+</div>
 
-<div class="container mt-4 justify-content-center text-center">
-  <h1>Welcome to the Akademik System</h1>
-  <p>This is the home page.</p>
+<!-- FEATURE CARDS -->
+<div class="container mb-5">
+  <div class="row g-4 justify-content-center">
 
-<!-- Bootstrap 5 JS -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold">Mahasiswa</h5>
+          <p class="card-text text-muted">
+            Kelola data mahasiswa dengan mudah dan terstruktur.
+          </p>
+          <a href="mahasiswa/index.php" class="btn btn-primary">
+            Kelola
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold">Program Studi</h5>
+          <p class="card-text text-muted">
+            Manajemen data program studi secara efisien.
+          </p>
+          <a href="prodi/index.php" class="btn btn-success">
+            Kelola
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold">Profile</h5>
+          <p class="card-text text-muted">
+            Perbarui informasi akun dan keamanan Anda.
+          </p>
+          <a href="auth/profile.php" class="btn btn-warning text-white">
+            Edit Profile
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
