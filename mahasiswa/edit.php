@@ -33,7 +33,7 @@ $q_prodi = mysqli_query($koneksi, $sql_prodi);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/navbar.php'; ?>
 <div class="container mt-4">
     <h2>Edit Mahasiswa</h2>
 

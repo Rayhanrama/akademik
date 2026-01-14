@@ -14,7 +14,7 @@ $result = mysqli_query($koneksi, $query);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/partials/navbar.php'; ?>
 <div class="container mt-3">
     <h1>Create Mahasiswa</h1>
 
