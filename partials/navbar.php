@@ -36,7 +36,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarProfile"
              role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?= $_SESSION['user']['nama']; ?>
+            <?= $_SESSION['user']['nama_lengkap']; ?>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
