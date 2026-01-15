@@ -3,7 +3,7 @@ session_start();
 
 // Jika belum login, arahkan ke halaman login
 if (!isset($_SESSION['login'])) {
-    header("Location: auth/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 ?>
