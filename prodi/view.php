@@ -1,4 +1,10 @@
-<?php 
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: auth/login.php");
+    exit;
+}
+ 
 require ('../koneksi.php');
 $sql = "SELECT * FROM prodi where id=$_GET[id]";
 $result = $koneksi->query($sql);
