@@ -4,8 +4,8 @@ include '../koneksi.php';
 
 $id    = $_POST['id'];
 $nama_lengkap  = mysqli_real_escape_string($koneksi, $_POST['nama_lengkap']);
-$email = mysqli_real_escape_string($koneksi, $_POST['email']);
-$pass  = mysqli_real_escape_string($koneksi, $_POST['password']); // opsional
+$email = mysqli_real_escape_string($koneksi, $_POST['email']); // opsional
+$pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 if ($pass != "") {
     $query = "UPDATE users SET nama_lengkap='$nama_lengkap', email='$email', password='$pass' WHERE id='$id'";
